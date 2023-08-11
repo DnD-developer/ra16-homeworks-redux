@@ -1,0 +1,38 @@
+name: Test and Build JS App
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+    paths-ignore:
+      - "./.gitignore"
+      - "./.github/*"
+      - "./.eslintrc"
+      - "./.eslintignore"
+
+jobs:
+  build_App:
+    strategy:
+      matrix:
+        node-version: [18.x]
+        os: [ubuntu-latest, windows-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - name: Run install
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: install
+      - name: Build production bundle
+        uses: borales/actions-yarn@v4
+        with:
+          cmd: build

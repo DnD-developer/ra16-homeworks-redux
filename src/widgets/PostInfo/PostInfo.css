@@ -1,0 +1,11 @@
+.postInfo {
+	width: 100%;
+	max-width: 1000px;
+
+	margin: 0 auto;
+	padding: 10px;
+
+	background-color: rgb(236, 236, 236);
+
+	border-radius: 10px;
+}

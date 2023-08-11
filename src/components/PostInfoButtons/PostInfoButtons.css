@@ -1,0 +1,38 @@
+.buttons-manipulation-posts {
+	padding: 0;
+	padding-left: 10px;
+	padding-right: 10px;
+
+	margin: 0;
+	margin-left: 20px;
+
+	border: none;
+
+	color: #ffffff;
+	font-size: 18px;
+	line-height: 30px;
+
+	cursor: pointer;
+}
+
+.buttons-manipulation-posts.blue {
+	background-color: rgb(86, 131, 245);
+}
+
+.buttons-manipulation-posts.red {
+	background-color: rgb(245, 86, 86);
+}
+
+.panel-for-buttons-manipulation-posts {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	width: 100%;
+
+	padding: 10px;
+
+	border-radius: 10px;
+
+	background-color: #ffffff;
+}

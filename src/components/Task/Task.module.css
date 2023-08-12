@@ -1,0 +1,16 @@
+.task {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	width: 100%;
+
+	margin-top: 15px;
+
+	list-style: none;
+	font-size: 25px;
+}
+
+.task:first-child {
+	margin-top: 0;
+}

@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0");
+
+.input {
+	display: block;
+
+	width: 100%;
+
+	padding-left: 5px;
+	padding-right: 10px;
+
+	line-height: 20px;
+}
+
+.button {
+	margin-left: 5px;
+	cursor: pointer;
+}
+
+.button:first-child {
+	margin-left: 0;
+}

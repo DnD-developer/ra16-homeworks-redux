@@ -31,3 +31,17 @@ export const clearEditIdAction = () => {
 		type: "clearId"
 	}
 }
+
+export const searchTasksAction = text => {
+	return {
+		type: "search",
+		payload: text
+	}
+}
+
+export const updateDataSearchTasksAction = tasksList => {
+	return {
+		type: "updateData",
+		payload: tasksList
+	}
+}

@@ -3,16 +3,15 @@ export function createNewTasks(state, action) {
 		case "saveTask":
 			return [...state, action.payload]
 		case "editTask":
-			const updateTaskList = state.map(task => {
+			const updateTasksList = state.map(task => {
 				if (task.id === action.payload.id) {
 					return {
 						...action.payload
 					}
 				}
-
 				return task
 			})
-			return updateTaskList
+			return updateTasksList
 
 		default:
 			return state
@@ -33,7 +32,23 @@ export function updateEditId(state, action) {
 export function manipulationsTasks(state, action) {
 	switch (action.type) {
 		case "deleteTask":
-			return state.filter(({ id }) => id !== action.payload)
+			const updateTasksList = state.filter(({ id }) => id !== action.payload)
+			return updateTasksList
+		default:
+			return state
+	}
+}
+
+export function searchTasks(state, action) {
+	switch (action.type) {
+		case "search":
+			if (action.payload) {
+				return state.filter(({ title }) => title.includes(action.payload) || action.payload.includes(title))
+			}
+
+			return state
+		case "updateData":
+			return [...action.payload]
 		default:
 			return state
 	}

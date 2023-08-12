@@ -3,9 +3,9 @@ import { createContext, useContext, useReducer } from "react"
 import combineReducers from "combine-reducers"
 import reduceReducers from "reduce-reducers"
 // reducers
-import { createNewTasks, manipulationsTasks, updateEditId } from "../reducers/taks"
+import { createNewTasks, manipulationsTasks, updateEditId, searchTasks } from "../reducers/tasks"
 
-const init = { editId: null, tasksList: [] }
+const init = { editId: null, searchTasks: [], dataTasks: [] }
 
 const TasksContext = createContext()
 
@@ -13,7 +13,8 @@ const tasksReducers = reduceReducers(createNewTasks, manipulationsTasks)
 
 const indexReducer = combineReducers({
 	editId: updateEditId,
-	tasksList: tasksReducers
+	dataTasks: tasksReducers,
+	searchTasks
 })
 
 export const useTasksContext = () => {
